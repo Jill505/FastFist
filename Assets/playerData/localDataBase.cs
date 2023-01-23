@@ -43,7 +43,7 @@ public class localDataBase : MonoBehaviour
         PlayerPrefs.SetString("PlayerDataLocal",JsonUtility.ToJson(PlayerData));
         PlayerPrefs.Save();
     }
-    public void dataJsonDepack()//解包
+    static public void dataJsonDepack()//解包
     {
         var Swaper = JsonUtility.FromJson<playerData>(PlayerPrefs.GetString("PlayerDataLocal"));
 

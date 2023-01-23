@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerData : MonoBehaviour
-{
+public class playerData {
+
     //基礎帳號數據
     public float gold;
     public float diamond;

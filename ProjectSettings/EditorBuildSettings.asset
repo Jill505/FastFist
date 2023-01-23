@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Login.unity
+    guid: 14deb61b93af76c458e341c657c171b3
+  - enabled: 1
     path: Assets/Scenes/Lobby.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/fightTestRoom.unity
     guid: 50d6895ad951c7b4f85ce740a1ca1c86
+  - enabled: 1
+    path: Assets/Scenes/BotNormalFight.unity
+    guid: 4f218a2616c690e4b9494b5915e43eff
+  - enabled: 1
+    path: Assets/Scenes/nomalFightRoom.unity
+    guid: 015b810607f085447929e2cb285be2f2
   m_configObjects: {}

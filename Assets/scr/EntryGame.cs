@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EntryGame : MonoBehaviour
 {
@@ -13,5 +14,6 @@ public class EntryGame : MonoBehaviour
         dataSenter.moodSort = localDataBase.PlayerData.moodsort;
         dataSenter.characterSort = localDataBase.PlayerData.selectionCharacter;
         DontDestroyOnLoad(GameObject.Find("Deliver(Clone)"));
+        SceneManager.LoadScene("BotNormalFight");
     }
 }
