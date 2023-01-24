@@ -56,5 +56,8 @@ public class localDataBase : MonoBehaviour
         PlayerData.Name = Swaper.Name;
 
         PlayerData.loginTimes = Swaper.loginTimes;
+
+        PlayerData.startSoundEffect = Swaper.startSoundEffect;
+        PlayerData.fireTimeSong = Swaper.fireTimeSong;
     }
 }

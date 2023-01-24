@@ -20,4 +20,8 @@ public class playerData {
 
     //底下寫本地特殊資料
     public int loginTimes;
+
+    //使用中的自定義物件
+    public string startSoundEffect;
+    public string fireTimeSong;
 }
