@@ -8,7 +8,7 @@ public class playerHold : MonoBehaviour
 
     public string myName;//玩家名稱
 
-    public string characterName;
+    public string characterName;//角色名稱
 
     public int roundRemain;//回合剩餘
     public int playerNum;//玩家序列(P1/P2)
@@ -23,6 +23,8 @@ public class playerHold : MonoBehaviour
 
     public float chargeMaxment;//最大充能
     public float chargeEnergy;//擁有中能量
+
+    public float degreeMake;//返回的角度
 
     public virtual void PassiveAbilities()
     {

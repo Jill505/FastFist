@@ -17,6 +17,8 @@ public class botBaseCentrol : MonoBehaviour
 
     public float frame = 0f;
 
+    public bool turnToPlayer1;
+
     void Awake()//載入配置並判斷自己是不是host 
     {
         audioSource = gameObject.GetComponent<AudioSource>();
@@ -52,12 +54,21 @@ public class botBaseCentrol : MonoBehaviour
     }
     void Start()
     {
+        player1.roundRemain += 1;
+        player2.roundRemain += 10000;//測試用
         StartCoroutine(botStartGame());
     }
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if (turnToPlayer1 == true)
+        {
+            //bot做回應
+        }
+        else
+        {
+            //玩家做回應
+        }
     }
 
     IEnumerator botStartGame()
@@ -69,5 +80,19 @@ public class botBaseCentrol : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.3f);
         Debug.Log("開始");
         yield return null;
+
+        roundCirtical();
+    }
+
+    public void roundCirtical()
+    {
+        if (player1.roundRemain > player2.roundRemain)
+        {
+            turnToPlayer1 = true;
+        }
+        else
+        {
+            turnToPlayer1 = false;
+        }
     }
 }
