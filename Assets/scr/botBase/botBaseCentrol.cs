@@ -19,6 +19,17 @@ public class botBaseCentrol : MonoBehaviour
 
     public bool turnToPlayer1;
 
+    public float diraction;
+
+    /*
+    public enum EnumPlayerData
+    {
+        turnToplayer1Enum,
+        turnToplayer2Enum,
+    }
+
+    EnumPlayerData enumPlayerData = new EnumPlayerData(); */
+
     void Awake()//載入配置並判斷自己是不是host 
     {
         audioSource = gameObject.GetComponent<AudioSource>();
@@ -61,12 +72,27 @@ public class botBaseCentrol : MonoBehaviour
 
     void Update()
     {
+           
+    }
+
+    public void roundSwitch()
+    {
         if (turnToPlayer1 == true)
         {
-            //bot做回應
-        }
-        else
+            //等待Player傳送dir
+            if (!IsInvoking("TimeOut"))
+            {
+                Invoke("TimeOut", player1.attackTime);
+            }
+                //bot做回應
+            }
+            else
         {
+            //等待bot傳送dir
+            if (!IsInvoking("TimeOut"))
+            {
+                Invoke("TimeOut", player2.attackTime);
+            }
             //玩家做回應
         }
     }
@@ -84,7 +110,24 @@ public class botBaseCentrol : MonoBehaviour
         roundCirtical();
     }
 
-    public void roundCirtical()
+    /*public void roundSwitch()
+    {
+        switch (enumPlayerData)
+        {
+            case EnumPlayerData.turnToplayer1Enum:
+            {
+
+                break;
+            }
+            case EnumPlayerData.turnToplayer2Enum:
+            {
+
+                break;
+            }
+        }
+    }*/
+
+    public void roundCirtical()//回合判定
     {
         if (player1.roundRemain > player2.roundRemain)
         {
@@ -94,5 +137,24 @@ public class botBaseCentrol : MonoBehaviour
         {
             turnToPlayer1 = false;
         }
+    }
+
+    void TimeOut()
+    {
+        if (turnToPlayer1 == true)
+        {
+            player1.roundRemain -= 1;
+        }
+        else
+        {
+            player2.roundRemain -= 1;
+        }
+    }
+
+    public void DeliveringDiraction(float diractionDelivering)
+    {
+        diraction = diractionDelivering;
+        CancelInvoke("TimeOut");
+        //進入到回合環節
     }
 }

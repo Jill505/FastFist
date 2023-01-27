@@ -255,8 +255,10 @@ MonoBehaviour:
   RAC: 0
   CUR: 0
   ABlock: 0
+  attackTime: 0
   chargeMaxment: 0
   chargeEnergy: 0
+  degreeMake: 0
 --- !u!1 &555255002
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,6 +451,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frame: 0
+  turnToPlayer1: 0
+  diraction: 0
 --- !u!4 &842265714
 Transform:
   m_ObjectHideFlags: 0
@@ -1128,8 +1132,10 @@ MonoBehaviour:
   RAC: 0
   CUR: 0
   ABlock: 0
+  attackTime: 0
   chargeMaxment: 0
   chargeEnergy: 0
+  degreeMake: 0
 --- !u!1 &2104340064
 GameObject:
   m_ObjectHideFlags: 0

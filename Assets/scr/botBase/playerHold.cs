@@ -21,6 +21,8 @@ public class playerHold : MonoBehaviour
     [Range(30f, 360f)] public float CUR;//精準度
     [Range(0f, 1f)] public float ABlock;//精準格檔比例
 
+    public float attackTime;//攻擊允許時間
+
     public float chargeMaxment;//最大充能
     public float chargeEnergy;//擁有中能量
 
